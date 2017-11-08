@@ -1,4 +1,3 @@
-
 var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(input){var output="";var chr1,chr2,chr3,enc1,enc2,enc3,enc4;var i=0;input=Base64._utf8_encode(input);while(i<input.length){chr1=input.charCodeAt(i++);chr2=input.charCodeAt(i++);chr3=input.charCodeAt(i++);enc1=chr1>>2;enc2=((chr1&3)<<4)|(chr2>>4);enc3=((chr2&15)<<2)|(chr3>>6);enc4=chr3&63;if(isNaN(chr2)){enc3=enc4=64;}else if(isNaN(chr3)){enc4=64;}
 output=output+ this._keyStr.charAt(enc1)+ this._keyStr.charAt(enc2)+ this._keyStr.charAt(enc3)+ this._keyStr.charAt(enc4);}
 return output;},decode:function(input){var output="";var chr1,chr2,chr3;var enc1,enc2,enc3,enc4;var i=0;input=input.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(i<input.length){enc1=this._keyStr.indexOf(input.charAt(i++));enc2=this._keyStr.indexOf(input.charAt(i++));enc3=this._keyStr.indexOf(input.charAt(i++));enc4=this._keyStr.indexOf(input.charAt(i++));chr1=(enc1<<2)|(enc2>>4);chr2=((enc2&15)<<4)|(enc3>>2);chr3=((enc3&3)<<6)|enc4;output=output+ String.fromCharCode(chr1);if(enc3!=64){output=output+ String.fromCharCode(chr2);}
@@ -26,14 +25,3 @@ if(a_to_vk)
 {a_to_vk.innerHTML+=a_to_va;}}
 function a_to_fa()
 {var a_to_vf=new Array();protected_links=protected_links.replace(" ","");a_to_vf=protected_links.split(",");return a_to_vf;}
-
-- Setelah itu upload file safelink.js nya tadi ke Github. Cara Upload File JavaScript di GitHub
-
-
-
- 
-- Setelah selesai di upload silakan copy url hasil upload nya tadi dan silakan kembali ke Laman blog yang sudah kita buat tadi silakan edit. Ganti url https://cdn.rawgit.com/dedi96/safelink/813ce72f/safelinkga.js dengan url hasil upload.an di ghitub tadi, dan begitu juga http://www.safelink.ga/p/generate.html ganti dengan url Laman statis yang sudah kita buat sebelumnya. Setelah itu Perbarui.
-
-- Kemudian kita edit Template blog, masuk pada menu Tema / Template > Edit HTML. Cari url https://cdn.rawgit.com/dedi96/safelink/813ce72f/safelinkga.js dan http://www.safelink.ga/p/generate.html ganti dengan masing" url yang sudah kita buat tadi sebelumnya, masih sama seperti diatas. Dan begitu juga dengan url lainnya. Setelah itu Simpan Template.
-
-- Disini blog Safelink Corverter nya sudah bisa kita gunakan, untuk supaya blog Utama kita bisa redirect link masukkan script dibawah ini tepat di atas code </body>. Terus simpan.
